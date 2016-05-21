@@ -26,14 +26,10 @@ namespace SharpUI
             set { uiMenuItemSetChecked(handle, value ? 1 : 0); }
         }
 
-        public void Enable()
+        public bool Enabled
         {
-            uiMenuItemEnable(handle);
-        }
-
-        public void Disable()
-        {
-            uiMenuItemDisable(handle);
+            get { throw new NotImplementedException("libui lacks implementation for uiMenuItemEnabled"); }
+            set { if (value) uiMenuItemEnable(handle); else uiMenuItemDisable(handle); }
         }
 
         private uiMenuItemOnClickedDelegate onClickedDelegate;

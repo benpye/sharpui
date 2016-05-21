@@ -17,8 +17,8 @@ namespace SharpUI.Example
             uiInit(ref o);
 
             List<UIMenu> menus = new List<UIMenu>();
-
             var menu = new UIMenu("File");
+            menus.Add(menu);
             var item = menu.AppendItem("Open");
             item.OnClicked += () =>
             {
@@ -43,20 +43,19 @@ namespace SharpUI.Example
             };
             item = menu.AppendQuitItem();
             //uiOnShouldQuit()
-            menus.Add(menu);
 
             menu = new UIMenu("Edit");
+            menus.Add(menu);
             item = menu.AppendCheckItem("Checkable Item");
             menu.AppendSeparator();
             item = menu.AppendItem("Disabled Item");
-            item.Disable();
+            item.Enabled = false;
             item = menu.AppendPreferencesItem();
-            menus.Add(menu);
 
             menu = new UIMenu("Help");
+            menus.Add(menu);
             item = menu.AppendItem("Help");
             menu.AppendAboutItem();
-            menus.Add(menu);
 
             window = new UIWindow("libui Control Gallery", 640, 480, true);
 
@@ -143,8 +142,17 @@ namespace SharpUI.Example
                 progressbar.Value = (int)slider.Value;
             };
 
-            // combobox
-            // editable combobox
+            var cbox = new UICombobox();
+            cbox.Append("Combobox Item 1");
+            cbox.Append("Combobox Item 2");
+            cbox.Append("Combobox Item 3");
+            inner.Append(cbox, false);
+
+            cbox = new UICombobox(true);
+            cbox.Append("Editable Item 1");
+            cbox.Append("Editable Item 2");
+            cbox.Append("Editable Item 3");
+            inner.Append(cbox, false);
 
             var rb = new UIRadioButtons();
             rb.Append("Radio Button 1");
@@ -160,11 +168,11 @@ namespace SharpUI.Example
 
             GC.Collect();
 
-            window.Show();
+            window.Shown = true;
             uiMain();
             uiUninit();
-            GC.KeepAlive(window);
             GC.KeepAlive(menus);
+            GC.KeepAlive(window);
         }
     }
 }

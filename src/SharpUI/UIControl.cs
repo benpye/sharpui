@@ -30,9 +30,11 @@ namespace SharpUI
 
         public bool Visible => uiControlVisible(handle) == 0 ? false : true;
 
-        public void Show() => uiControlShow(handle);
-
-        public void Hide() => uiControlHide(handle);
+        public bool Shown
+        {
+            get { throw new NotImplementedException("libui lacks implementation for uiControlShown"); }
+            set { if (value) uiControlShow(handle); else uiControlHide(handle); }
+        }
 
         public bool Enabled
         {
