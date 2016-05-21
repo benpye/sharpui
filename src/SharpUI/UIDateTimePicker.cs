@@ -8,22 +8,32 @@ using static SharpUI.NativeMethods;
 
 namespace SharpUI
 {
+    public enum UIDateTimePickerType
+    {
+        Date,
+        Time,
+        DateTime
+    }
+
     public class UIDateTimePicker : UIControl
     {
-        public UIDateTimePicker(bool date, bool time)
-            : base(CreateDateTimePicker(date, time), true)
+        public UIDateTimePicker(UIDateTimePickerType type)
+            : base(CreateDateTimePicker(type), true)
         { }
 
-        private static IntPtr CreateDateTimePicker(bool date, bool time)
+        private static IntPtr CreateDateTimePicker(UIDateTimePickerType type)
         {
-            if (date && time)
-                return uiNewDateTimePicker();
-            else if (date)
-                return uiNewDatePicker();
-            else if (time)
-                return uiNewTimePicker();
-            else
-                throw new ArgumentException($"Either {nameof(date)} or {nameof(time)} or both must be true");
+            switch(type)
+            {
+                case UIDateTimePickerType.DateTime:
+                    return uiNewDateTimePicker();
+                case UIDateTimePickerType.Date:
+                    return uiNewDatePicker();
+                case UIDateTimePickerType.Time:
+                    return uiNewTimePicker();
+                default:
+                    throw new ArgumentException($"{nameof(type)} is an invalid value");
+            }
         }
     }
 }

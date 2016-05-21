@@ -93,11 +93,11 @@ namespace SharpUI.Example
 
             inner.Append(new UISeparator(), false);
 
-            inner.Append(new UIDateTimePicker(true, false), false);
+            inner.Append(new UIDateTimePicker(UIDateTimePickerType.Date), false);
 
-            inner.Append(new UIDateTimePicker(false, true), false);
+            inner.Append(new UIDateTimePicker(UIDateTimePickerType.Time), false);
 
-            inner.Append(new UIDateTimePicker(true, true), false);
+            inner.Append(new UIDateTimePicker(UIDateTimePickerType.DateTime), false);
 
             //inner.Append(new UIFontButton(), false);
 
