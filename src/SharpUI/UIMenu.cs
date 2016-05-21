@@ -8,13 +8,14 @@ using static SharpUI.NativeMethods;
 
 namespace SharpUI
 {
-    public class UIMenu : UIControl
+    public class UIMenu
     {
         List<UIMenuItem> items;
+        IntPtr handle;
 
         public UIMenu(string text)
-            : base(CreateMenu(text), true)
         {
+            handle = CreateMenu(text);
             items = new List<UIMenuItem>();
         }
 
