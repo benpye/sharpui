@@ -36,9 +36,9 @@ namespace SharpUI
 
         private void InternalOnClicked(IntPtr sender, IntPtr window, IntPtr data)
         {
-            OnClicked?.Invoke();
+            OnClicked?.Invoke(this, (UIWindow)new UIControl(window, false));
         }
 
-        public event Action OnClicked;
+        public event Action<UIMenuItem, UIWindow> OnClicked;
     }
 }

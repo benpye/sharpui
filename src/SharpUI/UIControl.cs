@@ -12,7 +12,7 @@ namespace SharpUI
         internal IntPtr handle;
         private bool original;
 
-        protected UIControl(IntPtr handle, bool original = false)
+        internal UIControl(IntPtr handle, bool original = false)
         {
             this.handle = handle;
             this.original = original;

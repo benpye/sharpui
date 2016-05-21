@@ -20,7 +20,7 @@ namespace SharpUI.Example
             var menu = new UIMenu("File");
             menus.Add(menu);
             var item = menu.AppendItem("Open");
-            item.OnClicked += () =>
+            item.OnClicked += (mi, w) =>
             {
                 string filename = window.OpenFile();
                 if (String.IsNullOrEmpty(filename))
@@ -31,7 +31,7 @@ namespace SharpUI.Example
                 window.MessageBox("File selected", filename);
             };
             item = menu.AppendItem("Save");
-            item.OnClicked += () =>
+            item.OnClicked += (mi, w) =>
             {
                 string filename = window.OpenFile();
                 if (String.IsNullOrEmpty(filename))
@@ -60,7 +60,7 @@ namespace SharpUI.Example
             window = new UIWindow("libui Control Gallery", 640, 480, true);
 
             window.Margined = true;
-            window.OnClosing += () =>
+            window.OnClosing += (w) =>
             {
                 window.Dispose();
                 uiQuit();
@@ -130,13 +130,13 @@ namespace SharpUI.Example
             inner.Padded = true;
             group.SetChild(inner);
 
-            spinbox.OnChanged += () =>
+            spinbox.OnChanged += (s) =>
             {
                 slider.Value = spinbox.Value;
                 progressbar.Value = (int)spinbox.Value;
             };
 
-            slider.OnChanged += () =>
+            slider.OnChanged += (s) =>
             {
                 spinbox.Value = slider.Value;
                 progressbar.Value = (int)slider.Value;

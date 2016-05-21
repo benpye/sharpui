@@ -47,9 +47,9 @@ namespace SharpUI
 
         private void InternalOnClicked(IntPtr b, IntPtr data)
         {
-            OnClicked?.Invoke();
+            OnClicked?.Invoke(this);
         }
 
-        public event Action OnClicked;
+        public event Action<UIButton> OnClicked;
     }
 }

@@ -57,9 +57,9 @@ namespace SharpUI
 
         private void InternalOnChanged(IntPtr b, IntPtr data)
         {
-            OnChanged?.Invoke();
+            OnChanged?.Invoke(this);
         }
 
-        public event Action OnChanged;
+        public event Action<UIMultilineEntry> OnChanged;
     }
 }

@@ -42,9 +42,9 @@ namespace SharpUI
 
         private void InternalOnSelected(IntPtr b, IntPtr data)
         {
-            OnSelected?.Invoke();
+            OnSelected?.Invoke(this);
         }
 
-        public event Action OnSelected;
+        public event Action<UICombobox> OnSelected;
     }
 }

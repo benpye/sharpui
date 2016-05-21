@@ -63,13 +63,13 @@ namespace SharpUI
         {
             if(OnClosing != null)
             {
-                return OnClosing();
+                return OnClosing(this);
             }
 
             return 0;
         }
 
-        public event Func<int> OnClosing;
+        public event Func<UIWindow, int> OnClosing;
 
         public string OpenFile()
         {

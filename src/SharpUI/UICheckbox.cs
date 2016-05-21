@@ -53,9 +53,9 @@ namespace SharpUI
 
         private void InternalOnToggled(IntPtr b, IntPtr data)
         {
-            OnToggled?.Invoke();
+            OnToggled?.Invoke(this);
         }
 
-        public event Action OnToggled;
+        public event Action<UICheckbox> OnToggled;
     }
 }
