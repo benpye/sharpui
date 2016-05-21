@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F2EA48D0-863A-49F0-A2AE-271DB695DB9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFE63357-482D-41CB-B3B1-DF47EE6BF338}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpUI", "src\sharpui\SharpUI.xproj", "{7C05148D-2F46-42C1-9BD7-06187B0420CB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpUI.Example", "src\SharpUI.Example\SharpUI.Example.xproj", "{A5A8D310-FBC0-4105-967B-42251502781D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C05148D-2F46-42C1-9BD7-06187B0420CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C05148D-2F46-42C1-9BD7-06187B0420CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C05148D-2F46-42C1-9BD7-06187B0420CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C05148D-2F46-42C1-9BD7-06187B0420CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A8D310-FBC0-4105-967B-42251502781D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A8D310-FBC0-4105-967B-42251502781D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A8D310-FBC0-4105-967B-42251502781D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A8D310-FBC0-4105-967B-42251502781D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C05148D-2F46-42C1-9BD7-06187B0420CB} = {F2EA48D0-863A-49F0-A2AE-271DB695DB9B}
+		{A5A8D310-FBC0-4105-967B-42251502781D} = {F2EA48D0-863A-49F0-A2AE-271DB695DB9B}
+	EndGlobalSection
+EndGlobal
